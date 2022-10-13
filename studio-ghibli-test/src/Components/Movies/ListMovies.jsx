@@ -2,17 +2,20 @@ import React, { useContext, useEffect } from 'react'
 import { GeneralContext } from '../../Provider/GeneralProvider'
 import {fetchMovies} from '../../Services/FetchApi'
 import CardMovies from './CardMovies'
+import FilterMovies from './FilterMovies'
 
 function ListMovies() {
-  const {movies, setMovies} = useContext(GeneralContext)
+  const {moviesCopia, setMovies, setMoviesCopia} = useContext(GeneralContext)
 
   useEffect(() => {
+    fetchMovies().then((data) => setMoviesCopia(data))
     fetchMovies().then((data) => setMovies(data))
-  }, [setMovies])
+  }, [])
 
   return (
-    <div>     
-      {movies.map((movie) => (
+    <div> 
+      <FilterMovies />    
+      {moviesCopia.map((movie) => (
         <CardMovies
           key={movie.id}
           image={movie.image}
