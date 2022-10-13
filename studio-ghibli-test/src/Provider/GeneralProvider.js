@@ -15,6 +15,7 @@ const GeneralProvider = ({children}) => {
   const [filters, setFilters] = useState([filter]);
   const [moviesCopia, setMoviesCopia] = useState([]);
   const [peopleCopia, setPeopleCopia] = useState([]);
+  const [locationsCopia, setLocationsCopia] = useState([]);
 
   const contextValue = {
     movies,
@@ -28,7 +29,9 @@ const GeneralProvider = ({children}) => {
     moviesCopia,
     setMoviesCopia,
     peopleCopia,
-    setPeopleCopia
+    setPeopleCopia,
+    locationsCopia,
+    setLocationsCopia
   };
 
   return (

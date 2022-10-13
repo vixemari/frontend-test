@@ -4,12 +4,11 @@ import { GeneralContext } from '../../Provider/GeneralProvider'
 
 
 function LocationTable() {
-const {locations, setLocations} = useContext(GeneralContext)
+const {locationsCopia, setLocations, setLocationsCopia} = useContext(GeneralContext)
 
 useEffect(() => {
-    fetchLocations().then((data) => {
-        setLocations(data)
-    })
+    fetchLocations().then((data) => {setLocations(data)})
+    fetchLocations().then((data) => {setLocationsCopia(data)})
 }, [])
 
   return (
@@ -23,7 +22,7 @@ useEffect(() => {
       </tr>
     </thead>
     <tbody>
-      {locations.map((data) => (
+      {locationsCopia.map((data) => (
         <tr key={ data.name }>
           <td>{data.name}</td>
           <td>{data.climate}</td>
