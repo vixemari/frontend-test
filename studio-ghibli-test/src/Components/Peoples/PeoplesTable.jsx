@@ -1,18 +1,21 @@
 import React, {useContext, useEffect} from 'react'
 import { fetchPeople } from '../../Services/FetchApi'
 import { GeneralContext } from '../../Provider/GeneralProvider'
+import FilterPeoples from './FilterPeoples'
 
 
 function PeopleTable() {
-const {people, setPeople} = useContext(GeneralContext)
+const {setPeople, peopleCopia, setPeopleCopia} = useContext(GeneralContext)
 
 useEffect(() => {
-    fetchPeople().then((data) => {
-        setPeople(data)
-    })
+    fetchPeople().then((data) => { setPeople(data) })
+    fetchPeople().then((data) => { setPeopleCopia(data) })
+
 }, [])
 
   return (
+    <>
+    <FilterPeoples />    
     <table>
     <thead>
       <tr>
@@ -24,7 +27,7 @@ useEffect(() => {
       </tr>
     </thead>
     <tbody>
-      {people.map((data) => (
+      {peopleCopia.map((data) => (
         <tr key={ data.name }>
           <td>{data.name}</td>
           <td>{data.gender}</td>
@@ -36,6 +39,7 @@ useEffect(() => {
       ))}
     </tbody>
   </table>
+  </>
   )
 }
 

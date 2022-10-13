@@ -7,14 +7,15 @@ const {movies, filters, setFilters, setMoviesCopia } = useContext(GeneralContext
 const filterMoviesByName = (e) => {
   const lowerCaseName = e.toLowerCase()
   const filteredMovies = movies.filter((movie) => movie.title.toLowerCase().includes(lowerCaseName))
-  setMoviesCopia(filteredMovies)
-  
+  setMoviesCopia(filteredMovies)  
 }
 
 const handleChange = (event) => {
   filterMoviesByName(event.target.value);
   setFilters({ filterMovies: event.target.value });  
 };
+
+
 
   return (
     <section>
@@ -25,6 +26,7 @@ const handleChange = (event) => {
       value={ filters.FilterMovies }
       onChange={ handleChange }
     /> 
+    
   </section>
   )
 }
