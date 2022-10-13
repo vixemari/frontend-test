@@ -5,18 +5,17 @@ function CardMovies({ image, title, description, year }) {
   return (
     <div>
       <img src={image} alt={title} />
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <p>{description}</p>
       <p>{year}</p>
     </div>
   )
 }
-
 CardMovies.propTypes = {
   image: propTypes.string.isRequired,
   title: propTypes.string.isRequired,
   description: propTypes.string.isRequired,
-  year: propTypes.number.isRequired,
+  year: propTypes.string.isRequired  
 }
 
 export default CardMovies

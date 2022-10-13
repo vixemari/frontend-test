@@ -11,7 +11,7 @@ function ListMovies() {
   }, [setMovies])
 
   return (
-    <div>
+    <div>     
       {movies.map((movie) => (
         <CardMovies
           key={movie.id}
@@ -19,9 +19,9 @@ function ListMovies() {
           title={movie.title}
           description={movie.description}
           year={movie.release_date}
-        />
+          />
           
-      ))}
+          ))}        
     </div>
   )
 }
