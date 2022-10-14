@@ -12,6 +12,8 @@
 ## Contexto da Aplicação
 
 A aplicação consiste em filtrar dados de forma organizada em tabelas e cards de acordo com o tipo de dados retornados pela api. 
+Link do Deploy:
+https://studio-ghibli-five.vercel.app/
 
 ## Como Utilizazr
 
