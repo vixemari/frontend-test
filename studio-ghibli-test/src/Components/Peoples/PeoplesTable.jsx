@@ -17,7 +17,7 @@ useEffect(() => {
 }, [])
 
   return (
-    <>
+    <>   
     <FilterPeoples />    
     <Table
       className='table'
@@ -44,6 +44,7 @@ useEffect(() => {
     </tbody>
   </Table>
   </>
+  
   )
 }
 

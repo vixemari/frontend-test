@@ -4,7 +4,6 @@ import ListMovies from '../Components/Movies/ListMovies'
 import PeoplesTable from '../Components/Peoples/PeoplesTable'
 import LocationsTable from '../Components/Locations/LocationsTable'
 import Header from '../Components/Header'
-import { Dropdown } from 'reactstrap'
 
 function Home() {  
   const [page, setPage] = useState('movies') 
@@ -14,7 +13,7 @@ function Home() {
     <>
     <Header page={page} setPage={setPage}/>
    
-    {page === 'people' && <PeoplesTable />} 
+    { page === 'people' && <PeoplesTable />} 
     {page === 'Location' && <LocationsTable />}
     {page === 'films' && <ListMovies />}
 
