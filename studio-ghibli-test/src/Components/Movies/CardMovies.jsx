@@ -2,12 +2,14 @@ import React from 'react'
 import propTypes from 'prop-types'
 
 function CardMovies({ image, title, description, year }) {
-  return (
-    <div>
-      <img src={image} alt={title} />
-      <h2>{title}</h2>
-      <p>{description}</p>
-      <p>{year}</p>
+  return (    
+    <div className='movie-card'>
+      <div className='movie-card-body'>
+      <img className='movie-cover' src={image} alt={title} />      
+      <h4 className='movie-card-title'>{title}</h4>
+      <p className='movie-card-text'>{description}</p>
+      <p className='movie-card-text'>{year}</p>   
+      </div>   
     </div>
   )
 }

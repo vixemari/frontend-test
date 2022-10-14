@@ -1,6 +1,8 @@
 import React, {useContext, useEffect} from 'react'
 import { fetchLocations } from '../../Services/FetchApi'
 import { GeneralContext } from '../../Provider/GeneralProvider'
+import LocationFilter from './LocationFilter'
+import './style.css'
 
 
 function LocationTable() {
@@ -12,7 +14,9 @@ useEffect(() => {
 }, [])
 
   return (
-    <table>
+    <>
+    <LocationFilter />
+    <table className='table'>
     <thead>
       <tr>
         <th>Name</th>
@@ -32,6 +36,7 @@ useEffect(() => {
       ))}
     </tbody>
   </table>
+  </>
   )
 }
 

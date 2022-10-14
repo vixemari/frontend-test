@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import { GeneralContext } from '../../Provider/GeneralProvider'
+import {Input} from 'reactstrap'
 
 function FilterMovies() {
 const {movies, filters, setFilters, setMoviesCopia } = useContext(GeneralContext)
@@ -18,16 +19,16 @@ const handleChange = (event) => {
 
 
   return (
-    <section>
-    <input
+    
+    <Input
       type="text"
       placeholder="Pesquisar"
-      data-testid="name-filter"
       value={ filters.FilterMovies }
       onChange={ handleChange }
+      className="input-search"
     /> 
-    
-  </section>
+      
+  
   )
 }
 

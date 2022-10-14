@@ -24,6 +24,7 @@ function FilterPeoples() {
       placeholder="Pesquisar"
       value={ filters.filterPeoples }
       onChange={ handleChange }
+      className="input-search"
     />   
         
   </section>

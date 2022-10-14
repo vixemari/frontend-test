@@ -2,6 +2,9 @@ import React, {useContext, useEffect} from 'react'
 import { fetchPeople } from '../../Services/FetchApi'
 import { GeneralContext } from '../../Provider/GeneralProvider'
 import FilterPeoples from './FilterPeoples'
+import { Table } from 'reactstrap'
+import './style.css'
+
 
 
 function PeopleTable() {
@@ -16,7 +19,9 @@ useEffect(() => {
   return (
     <>
     <FilterPeoples />    
-    <table>
+    <Table
+      className='table'
+    >
     <thead>
       <tr>
         <th>Name</th>
@@ -29,16 +34,15 @@ useEffect(() => {
     <tbody>
       {peopleCopia.map((data) => (
         <tr key={ data.name }>
-          <td>{data.name}</td>
+          <td >{data.name}</td>
           <td>{data.gender}</td>
           <td>{data.age}</td>
           <td>{data.eye_color}</td>
-          <td>{data.hair_color}</td>
-        
+          <td>{data.hair_color}</td>        
         </tr>
       ))}
     </tbody>
-  </table>
+  </Table>
   </>
   )
 }

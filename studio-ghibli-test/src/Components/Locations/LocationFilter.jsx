@@ -22,9 +22,9 @@ const handleChange = (event) => {
     <input
       type="text"
       placeholder="Pesquisar"
-      data-testid="name-filter"
       value={ filters.Filterlocations }
       onChange={ handleChange }
+      className="input-search"
     /> 
     
   </section>
